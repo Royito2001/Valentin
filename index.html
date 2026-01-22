@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una experiencia especial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Lora:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- FASE 1: TEXTO POÉTICO MÍSTICO -->
+    <section id="phase1" class="phase active">
+        <div class="phase-container">
+            <div class="decorative-elements phase1-decorations"></div>
+            <div class="content-wrapper">
+                <div class="text-content phase1-text">
+                    <p class="poetic-text">
+                        A veces la vida avanza tan deprisa<br>
+                        que olvidamos lo invisible.<br>
+                        Lo que no se toca,<br>
+                        pero se siente.<br><br>
+                        Entre el ruido del mundo<br>
+                        y las obligaciones diarias,<br>
+                        existen lugares secretos<br>
+                        donde el tiempo se detiene.<br>
+                        Dicen que ahí habitan las hadas,<br>
+                        los susurros antiguos<br>
+                        y las promesas que aún no se han dicho.<br>
+                        Este es uno de esos lugares.<br><br>
+                        <em>"Lo esencial es invisible a los ojos."</em><br>
+                        <span class="quote-author">— Antoine de Saint-Exupéry</span><br><br>
+                        No hay prisa aquí.<br>
+                        No hay exigencias.<br>
+                        Solo una pausa robada al mundo<br>
+                        pensada únicamente para ti.<br><br>
+                        Tal vez la magia no sea volar,<br>
+                        ni lanzar hechizos,<br>
+                        sino encontrar a alguien<br>
+                        con quien el silencio también abraza.<br>
+                        Como en los cuentos,<br>
+                        cuando dos almas se reconocen<br>
+                        antes incluso de entender por qué.<br><br>
+                        <em>"Amar no es mirarse el uno al otro,<br>
+                        es mirar juntos en la misma dirección."</em><br>
+                        <span class="quote-author">— Antoine de Saint-Exupéry</span><br><br>
+                        Este momento no pide nada.<br>
+                        Solo que respires.<br>
+                        Que sientas.<br>
+                        Que confíes.
+                    </p>
+                    <p class="breathe-text">Respira 😌</p>
+                </div>
+                <button class="continue-btn" onclick="goToPhase(2)">Continuar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FASE 2: TEXTO ÍNTIMO Y REVELADOR -->
+    <section id="phase2" class="phase">
+        <div class="phase-container">
+            <div class="decorative-elements phase2-decorations"></div>
+            <div class="content-wrapper">
+                <div class="text-content phase2-text">
+                    <p class="intimate-text">
+                        Ahora ya sabes que no es casualidad.<br>
+                        Que detrás de estas palabras<br>
+                        hay alguien que te conoce,<br>
+                        que te admira<br>
+                        y que te elige cada día.<br><br>
+                        Nuestro camino no ha sido perfecto,<br>
+                        pero ha sido real.<br>
+                        Hemos aprendido, crecido<br>
+                        y seguido adelante juntos,<br>
+                        incluso cuando el mundo pesaba más de la cuenta.<br><br>
+                        Me siento orgulloso de ti.<br>
+                        De tu fuerza,<br>
+                        de tu sensibilidad,<br>
+                        de cómo cuidas a los demás<br>
+                        incluso cuando tú también necesitas parar.<br><br>
+                        Contigo he aprendido<br>
+                        que amar no es prometer un camino fácil,<br>
+                        sino decidir caminarlo acompañado.<br>
+                        Cuidarnos.<br>
+                        Escucharnos.<br>
+                        Elegirnos.<br><br>
+                        Sueño con seguir construyendo a tu lado.<br>
+                        Con reírnos de lo simple.<br>
+                        Con apoyarnos en lo difícil.<br>
+                        Con envejecer juntos<br>
+                        sin dejar de ser nosotros.<br><br>
+                        Esto no es un final.<br>
+                        Es una continuidad.<br>
+                        Una elección consciente.<br>
+                        Y soy muy feliz<br>
+                        de que seas tú.
+                    </p>
+                </div>
+                <button class="continue-btn" onclick="goToPhase(3)">Continuar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FASE 3: GALERÍA DE FOTOS CON MÚSICA -->
+    <section id="phase3" class="phase">
+        <div class="phase-container phase3-container">
+            <audio id="background-music" loop>
+                <source src="assets/audio/music.mp3" type="audio/mpeg">
+                <!-- El archivo de música se añadirá después -->
+            </audio>
+            
+            <div class="gallery-container">
+                <div class="photo-group active" data-group="0">
+                    <!-- Grupo 1: Fotos 1-3 -->
+                    <img src="assets/images/photos/photo1.jpg" alt="Foto 1" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo2.jpg" alt="Foto 2" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo3.jpg" alt="Foto 3" class="gallery-photo" loading="lazy">
+                </div>
+                <div class="photo-group" data-group="1">
+                    <!-- Grupo 2: Fotos 4-6 -->
+                    <img src="assets/images/photos/photo4.jpg" alt="Foto 4" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo5.jpg" alt="Foto 5" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo6.jpg" alt="Foto 6" class="gallery-photo" loading="lazy">
+                </div>
+                <div class="photo-group" data-group="2">
+                    <!-- Grupo 3: Fotos 7-9 -->
+                    <img src="assets/images/photos/photo7.jpg" alt="Foto 7" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo8.jpg" alt="Foto 8" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo9.jpg" alt="Foto 9" class="gallery-photo" loading="lazy">
+                </div>
+                <div class="photo-group" data-group="3">
+                    <!-- Grupo 4: Fotos 10-12 -->
+                    <img src="assets/images/photos/photo10.jpg" alt="Foto 10" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo11.jpg" alt="Foto 11" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo12.jpg" alt="Foto 12" class="gallery-photo" loading="lazy">
+                </div>
+                <div class="photo-group" data-group="4">
+                    <!-- Grupo 5: Fotos 13-15 -->
+                    <img src="assets/images/photos/photo13.jpg" alt="Foto 13" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo14.jpg" alt="Foto 14" class="gallery-photo" loading="lazy">
+                    <img src="assets/images/photos/photo15.jpg" alt="Foto 15" class="gallery-photo" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Mensaje final -->
+            <div id="final-message" class="final-message">
+                <h1>SIEMPRE JUNTOS</h1>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
