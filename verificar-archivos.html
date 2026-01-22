@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Archivos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #fff;
+        }
+        .archivo {
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .existe {
+            background: #2d5a2d;
+            color: #90ee90;
+        }
+        .no-existe {
+            background: #5a2d2d;
+            color: #ee9090;
+        }
+        h1 {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Verificación de Archivos</h1>
+    <p>Esta página verifica que todos los archivos necesarios estén cargando correctamente.</p>
+    
+    <div id="resultados"></div>
+    
+    <script>
+        const archivos = [
+            'css/styles.css',
+            'js/main.js',
+            'assets/images/photos/1.jpeg',
+            'assets/images/photos/2.jpeg',
+            'assets/images/photos/3.jpeg'
+        ];
+        
+        const resultados = document.getElementById('resultados');
+        
+        archivos.forEach(archivo => {
+            const img = new Image();
+            const link = document.createElement('link');
+            const script = document.createElement('script');
+            
+            const div = document.createElement('div');
+            div.className = 'archivo';
+            div.innerHTML = `Verificando: ${archivo}...`;
+            resultados.appendChild(div);
+            
+            if (archivo.endsWith('.css')) {
+                link.rel = 'stylesheet';
+                link.href = archivo;
+                link.onload = () => {
+                    div.className = 'archivo existe';
+                    div.innerHTML = `✅ ${archivo} - CARGADO`;
+                };
+                link.onerror = () => {
+                    div.className = 'archivo no-existe';
+                    div.innerHTML = `❌ ${archivo} - NO ENCONTRADO`;
+                };
+                document.head.appendChild(link);
+            } else if (archivo.endsWith('.js')) {
+                script.src = archivo;
+                script.onload = () => {
+                    div.className = 'archivo existe';
+                    div.innerHTML = `✅ ${archivo} - CARGADO`;
+                };
+                script.onerror = () => {
+                    div.className = 'archivo no-existe';
+                    div.innerHTML = `❌ ${archivo} - NO ENCONTRADO`;
+                };
+                document.head.appendChild(script);
+            } else {
+                img.src = archivo;
+                img.onload = () => {
+                    div.className = 'archivo existe';
+                    div.innerHTML = `✅ ${archivo} - CARGADO`;
+                };
+                img.onerror = () => {
+                    div.className = 'archivo no-existe';
+                    div.innerHTML = `❌ ${archivo} - NO ENCONTRADO`;
+                };
+            }
+        });
+    </script>
+</body>
+</html>
+
